@@ -1,43 +1,33 @@
-# Sistema de Itinerário de Ônibus
+# 🚌 Sistema de Itinerário de Ônibus
 
-## Descrição
+Sistema em **C++** para gerenciamento de rotas de transporte coletivo, usando **lista duplamente encadeada**.
 
-Este projeto tem como objetivo desenvolver um sistema em C++ para gerenciamento de itinerários de ônibus. O sistema permitirá cadastrar, remover, buscar e listar paradas ao longo de uma rota, auxiliando motoristas e supervisores no controle do trajeto.
+## Como compilar e executar
 
-A estrutura de dados principal utilizada será **lista encadeada**, possibilitando inserções e remoções eficientes.
-
----
-
-## Requisitos
-
-* Compilador C++ (GCC recomendado)
-* IDE opcional: VSCode ou similar
-* Sistema operacional: Windows, Linux ou macOS
-
----
-
-##  Compilação e Execução
-
-*(Ainda não implementado — será adicionado nas próximas etapas do projeto)*
-
----
-
-## Estrutura de Dados Escolhida
-
-Foi escolhida a **lista duplamente encadeada**, pois ela permite percorrer a rota tanto no sentido normal quanto inverso, facilitando a implementação da funcionalidade de listagem em ordem inversa.
-
----
-
-##  Estrutura do Projeto
-
-```
-/src      -> arquivos fonte (.cpp)
-/include  -> arquivos de cabeçalho (.h)
-/tests    -> testes do sistema
+```bash
+g++ -o itinerario main.cpp src/linked_list.cpp
+./itinerario
 ```
 
----
+## Funcionalidades
 
-## Status do Projeto
+1. Inserir parada no início
+2. Inserir parada no fim
+3. Inserir parada por posição
+4. Remover primeira parada
+5. Remover última parada
+6. Buscar parada por nome (parcial)
+7. Listar rota completa (ida)
+8. Listar rota em ordem inversa
+9. Contar paradas
 
-## Repositório inicial criado. Implementação será realizada nas próximas etapas.
+## Estrutura de dados escolhida
+
+**Lista duplamente encadeada**, pois permite:
+- Percurso nos dois sentidos (ida e volta) sem estruturas auxiliares
+- Remoção eficiente nas duas extremidades em O(1)
+- Inserção por posição facilitada pelo ponteiro `anterior`
+
+## Cenário alternativo
+
+Para **linhas circulares** (ônibus que retorna ao ponto de origem), uma **lista circular duplamente encadeada** seria mais vantajosa, pois o último nó conectaria naturalmente ao primeiro, sem lógica condicional extra.
